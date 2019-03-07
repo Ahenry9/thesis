@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Job Search App</title>
+	<link rel="stylesheet" href="./css/index.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="http://code.jquery.com/jquery-2.0.3.min.js"  type="text/javascript"></script>
+  <script>
+  // jQuery.support.cors = true;
+//   $.ajax({
+//   type: "POST",
+//   dataType: 'json',
+//   url: 'http:localhost:5000/data',
+//   contentType: "application/json; charset=utf-8",
+//   complete: function(data) {
+//     console.log(data);
+//   },
+//   success: function(data){
+//     console.log(data);
+//   }
+// });
+</script>
+</head>
+<body onload="onLoad()">
+	<!-- Tabs -->
+  <div class="tab">
+    <button class="tablinks col-lg-03 col-md-04 col-sm-04 li" onclick="tabClick(event, 'Search');searchTab();">SEARCH</button>
+    <button id="editTabButton" class="tablinks col-lg-03 col-md-04 col-sm-04 li" id="defaultOpen" onclick="tabClick(event, 'Sort');"> SORT</button>
+    <button class="tablinks col-lg-03 col-md-04 col-sm-04 li" onclick="tabClick(event, 'Starred');starredTab();">STARRED</button>
+  </div>
+
+  <form id="Sort" class="tabcontent">
+	<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 gry" id="TechSkillsCard">
+      <span class="cardHeadingSpan">Tech Skills</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-06 col-md-06 col-sm-12 gry" id="TechSkillsSelectCard">
+      <span>
+        <select id="techSkillsSelectID" multiple size="5" onchange="selectedTechSkill(this)">
+
+        </select>
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 gry" id="softSkillsCard">
+      <span class="cardHeadingSpan">Soft Skills</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-06 col-md-06 col-sm-12 gry" id="softSkillsSelectCard">
+      <span>
+        <select id="softSkillsSelectID" multiple size="5" onchange="selectedSoftSkill(this)">
+        <option value="0">Creative</option>
+        <option value="1">Integrity</option>
+        <option value="2">Helpful</option>
+        <option value="3">Analytical</option>
+        <option value="4">Planning</option>
+        <option value="5">Social</option>
+        <option value="6">Efficient</option>
+        <option value="7">Mentoring</option>
+        <option value="8">Respectful</option>
+        </select>
+      </span>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 gry" id="locationCard">
+      <span class="cardHeadingSpan">Locations</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-06 col-md-06 col-sm-12 gry" id="locationSelectCard">
+      <span>
+        <select id="locationSelectID" multiple size="5" onchange="selectedLocation(this)">
+
+        </select>
+      </span>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 gry" id="industryCard">
+      <span class="cardHeadingSpan">Industry</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-06 col-md-06 col-sm-12 gry" id="industrySelectCard">
+      <span>
+        <select id="industrySelectID" multiple size="5" onchange="selectedIndustrie(this)">
+
+        </select>
+      </span>
+    </div>
+  </div>
+
+
+  <button type="button" onclick="tabClick(event, 'Search');searchTab();">Submit</button>
+  </form>
+
+
+<div id="Starred" class="tabcontent">
+
+</div>
+
+
+<div id="Details" class="tabcontent"> 
+  <p id="jobTitleLabel">Job Title: </p>
+  <p id="companyLabel">Company: </p>
+  <p id="locationLabel">Location: </p>
+  <p id="industryLabel">Indstry: </p>
+  <button id="urlButton">Go To Dice Listing</button>
+</div>
+
+<!-- Start of Search Tab -->
+<div id="Search" class="tabcontent">
+
+</div>
+
+
+
+
+
+<!-- <button type='button' onclick='getData()'>Get data!</button> -->
+<script type="text/javascript" src="./js/index.js"></script>
+</body>
+
+<!-- <script type="text/javascript" src="node_getdata.js"></script> -->
+</html>
